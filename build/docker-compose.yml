@@ -1,0 +1,11 @@
+version: "3.7"
+services:
+
+  db:
+    image: microsoft/mssql-server-linux:2017-latest
+    environment:
+      - SA_PASSWORD=HelloEllen123!
+      - ACCEPT_EULA=Y
+    ports:
+      - "5434:1433"
+    container_name: ellen-sql-db
