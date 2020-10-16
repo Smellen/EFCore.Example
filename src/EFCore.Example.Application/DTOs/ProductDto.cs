@@ -1,5 +1,8 @@
-﻿namespace EFCore.Example.Application.DTOs
+﻿using Newtonsoft.Json;
+
+namespace EFCore.Example.Application.DTOs
 {
+    [JsonProperty("Product")]
     public class ProductDto
     {
         public int Id { get; set; }
