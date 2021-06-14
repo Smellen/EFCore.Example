@@ -17,6 +17,7 @@ namespace EFCore.Example.Controllers
         [HttpGet]
         public string Get()
         {
+            _logger.LogInformation("Test log!");
             return "Hello Ellen!";
         }
     }

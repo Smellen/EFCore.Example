@@ -2,7 +2,6 @@
 
 namespace EFCore.Example.Application.DTOs
 {
-    [JsonProperty("Product")]
     public class ProductDto
     {
         public int Id { get; set; }

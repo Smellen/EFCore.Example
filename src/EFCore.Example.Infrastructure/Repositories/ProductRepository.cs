@@ -7,12 +7,12 @@ namespace EFCore.Example.Infrastructure.Repositories
 {
     public class ProductRepository : IProductRepository
     {
-        public async Task<ProductDto> CreateProduct(ProductDto dto)
+        public Task<ProductDto> CreateProduct(ProductDto dto)
         {
             throw new NotImplementedException();
         }
 
-        public async Task<ProductDto> GetProduct(int id)
+        public Task<ProductDto> GetProduct(int id)
         {
             throw new NotImplementedException();
         }

@@ -1,5 +1,5 @@
-using AutoMapper;
 using System.Reflection;
+using EFCore.Example.Application;
 using EFCore.Example.Domain.DomainServices;
 using EFCore.Example.Domain.Interfaces;
 using EFCore.Example.Infrastructure;
@@ -10,7 +10,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using EFCore.Example.Application;
 
 namespace EFCore.Example
 {
@@ -31,11 +30,8 @@ namespace EFCore.Example
         {
             services.AddHealthChecks();
 
-            services.AddEntityFrameworkSqlServer()
-                .AddDbContext<ExampleDbContext>(options =>
-                {
-                    options.UseSqlServer(Configuration["ConnectionString"], sqlOptions => sqlOptions.MigrationsAssembly(typeof(Startup).GetTypeInfo().Assembly.GetName().Name));
-                });
+            services.AddDbContext<ExampleDbContext>(options =>
+            options.UseSqlServer(Configuration["ConnectionString"], sqlOptions => sqlOptions.MigrationsAssembly(typeof(Startup).GetTypeInfo().Assembly.GetName().Name)));
 
             services.AddTransient<IProductService, ProductService>();
             services.AddTransient<IProductRepository, ProductRepository>();

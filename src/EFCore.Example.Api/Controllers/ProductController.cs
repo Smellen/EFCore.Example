@@ -26,7 +26,7 @@ namespace EFCore.Example.Api.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Get(int id)
         {
-            if(id < 1)
+            if (id < 1)
             {
                 return BadRequest("The product identifier is required.");
             }
